@@ -6,7 +6,8 @@
   "author": "François Brucker <francois.brucker@centrale-marseille.fr>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "user-story": "jest --testRegex=\"user-story.js\""
   },
   "devDependencies": {
     "chromedriver": "^85.0.1",
