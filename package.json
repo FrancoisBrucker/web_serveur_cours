@@ -5,6 +5,9 @@
   "repository": "git@github.com:FrancoisBrucker/web_serveur_cours.git",
   "author": "François Brucker <francois.brucker@centrale-marseille.fr>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "jest": "^26.5.0"
   }
