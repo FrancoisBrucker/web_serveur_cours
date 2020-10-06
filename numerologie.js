@@ -15,7 +15,16 @@ function sommeFinale(nombre) {
     return nombre
 }
 
+function nombre(chaine) {
+    var somme = 0
+    for (var i=0; i< chaine.length; i++) {
+        somme += sommeFinale(chaine.charCodeAt(i))
+    }
+    return sommeFinale(somme)
+}
+
 module.exports = {
     somme: somme,
     sommeFinale: sommeFinale,
+    nombre: nombre,
 }
