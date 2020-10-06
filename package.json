@@ -1,0 +1,11 @@
+{
+  "name": "web_serveur",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FrancoisBrucker/web_serveur_cours.git",
+  "author": "François Brucker <francois.brucker@centrale-marseille.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.5.0"
+  }
+}
