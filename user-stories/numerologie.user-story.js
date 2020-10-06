@@ -4,21 +4,14 @@
 
 var fs = require('fs');
 
-const url = 'https://www.google.com'
+const url = "file://" + __dirname +'/../index.html'
 
 
-describe('Google renders', () => {
+
+describe('Le site focntionne renders', () => {
   test('it renders', async () => {
     await browser.get(url)
     const title = await browser.getTitle()
-    expect(title).toContain('Google')
-  })
-
-  test('save a picture', async () => {
-      // files saved in ./reports/screenshots by default
-      await browser.get(url)
-      browser.takeScreenshot().then((data) => {
-        fs.writeFileSync('img.png', data, 'base64')
-      })
+    expect(title).toContain('Numérologie')
   })
 })
