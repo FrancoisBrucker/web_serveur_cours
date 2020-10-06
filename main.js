@@ -3,7 +3,6 @@ function change_value() {
     if (prenom) {
         document.querySelector("#get-value").textContent = nombre(prenom)
     } else {
-        console.log("prout")
         document.querySelector("#get-value").textContent = "?"
     }
 
