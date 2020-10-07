@@ -1,0 +1,11 @@
+{
+  "name": "web_serveur",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "git@github.com:FrancoisBrucker/web_serveur_cours.git",
+  "author": "François Brucker <francois.brucker@centrale-marseille.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "purecss": "^2.0.3"
+  }
+}

@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node/14.13.0/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js run test look-at-google.user-story.js
+  /usr/local/Cellar/node/14.13.0/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js run test
 
 PATH: 
-  /Users/fbrucker/.pyenv/shims:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/bin:/usr/local/sbin:prout:/Users/fbrucker/.emacs.d/bin/:/Users/fbrucker/.pyenv/shims:/Users/fbrucker/.sdkman/candidates/kotlin/current/bin:/Users/fbrucker/.sdkman/candidates/java/current/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/bin:/usr/local/sbin:prout:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin
+  /Users/fbrucker/.pyenv/shims:/Users/fbrucker/.sdkman/candidates/kotlin/current/bin:/Users/fbrucker/.sdkman/candidates/java/current/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/bin:/usr/local/sbin:prout:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin
 
 Yarn version: 
   1.22.5
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/fbrucker/Documents/temp/web_serveur/package.json: Unexpected token } in JSON at position 625
+  SyntaxError: /Users/fbrucker/Documents/temp/web_serveur/package.json: Unexpected token ' in JSON at position 663
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -30,7 +30,8 @@ npm manifest:
     "author": "François Brucker <francois.brucker@centrale-marseille.fr>",
     "license": "MIT",
     "scripts": {
-      "test": "jest"
+      "test": "jest",
+      "user-story": "jest --testRegex=\"user-story.js\""
     },
     "devDependencies": {
       "chromedriver": "^85.0.1",
@@ -38,15 +39,13 @@ npm manifest:
       "jest-environment-webdriver": "^0.2.0",
       "selenium-webdriver": "^4.0.0-alpha.7"
     },
-    "dependencies": {
-      "purecss": "^2.0.3"
-    },
     "jest": {
       "testEnvironment": "jest-environment-webdriver",
       "testEnvironmentOptions": {
         "browser": "chrome"
       },
-    },
+      "modulePathIgnorePatterns": ['<rootDir>/static']
+    }
   }
 
 yarn manifest: 
@@ -3272,11 +3271,6 @@ Lockfile:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
     integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  
-  purecss@^2.0.3:
-    version "2.0.3"
-    resolved "https://registry.yarnpkg.com/purecss/-/purecss-2.0.3.tgz#ae6cd4a37b4a91658930c68098308f06d0737364"
-    integrity sha512-jK5t8Wdyh1xiskKt9Pk3psruRP7XHcHYfsBkA9tu+CGGxaC3goTyd9EFCFyYuhC7AK/68NqDfuOsP8FgQ9vHRg==
   
   qs@~6.5.2:
     version "6.5.2"

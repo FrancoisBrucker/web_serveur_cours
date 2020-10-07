@@ -4,7 +4,7 @@
 
 var fs = require('fs');
 
-const url = "file://" + __dirname +'/../index.html'
+const url = "file://" + __dirname +'/../../static/index.html'
 
 
 
