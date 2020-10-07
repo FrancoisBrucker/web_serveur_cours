@@ -1,4 +1,4 @@
-numerologie = require("../numerologie")
+numerologie = require("../static/numerologie")
 
 describe("Un chiffre à un prenom", () => {
     test("somme des nombres", () => {
