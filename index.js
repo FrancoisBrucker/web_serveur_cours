@@ -1,14 +1,29 @@
-const http = require('http');
+var express = require('express')
+var app = express()
 
-const hostname = '127.0.0.1';
-const port = 3000;
+app.use(function (req, res, next) {
+    console.log('Time:', Date.now());
+    next(); // sans cette ligne on ne pourra pas poursuivre.
+})
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
-});
+app.use("/static", express.static(__dirname + '/static'))
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.get('/', (request, response) => {
+    response
+        .status(200)
+        .redirect(301, '/static/index.html')
+})
+
+
+app.use(function (request,response) {
+    console.log("et c'est le 404 : " + request.url);
+
+    response.statusCode = 404;
+    response.setHeader('Content-Type', 'text/html');
+
+    response.end("<html><head><title>la quatre cent quatre</title></head><body><h1>Et c'est la 404.</h1><img  src=\"https://www.leblogauto.com/wp-content/uploads/2020/04/Peugeot-404-1.jpg\" /></body></html>");
+
+})
+
+app.listen(3000);
+console.log("c'est parti")

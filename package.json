@@ -10,16 +10,17 @@
     "user-story": "jest --testRegex=\"user-story.js\""
   },
   "devDependencies": {
-    "chromedriver": "^85.0.1",
-    "jest": "^26.5.0",
-    "jest-environment-webdriver": "^0.2.0",
-    "selenium-webdriver": "^4.0.0-alpha.7"
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "geckodriver": "^1.20.0",
+    "chromedriver": "85.0.1",
+    "jest": "^26.5.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   },
   "jest": {
-    "testEnvironment": "jest-environment-webdriver",
-    "testEnvironmentOptions": {
-      "browser": "chrome"
-    },
-    "modulePathIgnorePatterns": ["<rootDir>/static"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/static"
+    ]
   }
 }
