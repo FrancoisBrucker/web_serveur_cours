@@ -1,3 +1,4 @@
+const logger = require('./logger')
 const app = require('./app');
 
 config = {
@@ -7,5 +8,5 @@ config = {
 
 
 app.listen(config.port, () => {
-    console.log('server is running at: ' + 'http://' + config.baseUrl + ':' + config.port);
+    logger.info('server is running at: ' + 'http://' + config.baseUrl + ':' + config.port);
 });

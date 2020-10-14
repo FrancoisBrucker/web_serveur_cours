@@ -1,10 +1,11 @@
 var express = require('express')
 var app = express()
 
-app.use(function (req, res, next) {
-    console.log('Time:', Date.now());
-    next(); // sans cette ligne on ne pourra pas poursuivre.
-})
+var morgan = require('morgan')
+
+const logger = require('./logger')
+
+app.use(morgan('dev', {stream: {write:(log) => {logger.http(log)}}}))
 
 app.use("/static", express.static(__dirname + '/static'))
 
@@ -15,7 +16,6 @@ app.get('/', (request, response) => {
 
 
 app.use(function (request,response) {
-    console.log("et c'est le 404 : " + request.url);
 
     response.statusCode = 404;
     response.setHeader('Content-Type', 'text/html');
