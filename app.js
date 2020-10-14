@@ -14,6 +14,9 @@ app.get('/', (request, response) => {
         .redirect(301, '/static/index.html')
 })
 
+api = require('./routes')
+app.use('/api', api)
+
 
 app.use(function (request,response) {
 
